@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Forms</h1>
+
+    
+    <form action="submit.html" enctype="multipart/form-data">
+        
+        <!-- KOPPLA IHOP LABEL MED INPUT VIA ID OCH FOR-->
+        <label for="name" >Name</label> 
+        <input type="text" id="name" name="firstname">
+        <br>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <br>
+        <label for="number">Amount</label>
+        <input type="number" id="number" name="amount">
+        <br>
+
+        <input type="radio" name="gender"> Man
+        <input type="radio" name="gender"> Kvinna
+        <input type="radio" name="gender"> Annat
+
+        <br>
+
+
+        <label for="newsletter">Nyhetsbrev</label>
+        <input type="checkbox" name="newsletter" value="yes" id="newsletter">
+
+
+        <br>
+        <label>Välj kurs</label>
+        <input type="checkbox" name="course" id="courses" value="html">
+        <input type="checkbox" name="course" id="courses" value="css">
+                <br>
+        <input type="hidden" name="userid" id="hidden">
+        
+        <input type="range" name="volume" min="0" max="100" step="5" id="">
+        <input type="date" name="booking" min="2026-02-11" max="2027-02-11">
+        
+        <input type="color">
+
+        <input type="file" multiple name="document">
+
+
+        <input type="image" >
+        <br>
+        <br>
+        <br>
+        
+    
+        
+
+        <label for="name" >Name</label> 
+        <input type="text" id="name" name="firstname">
+        <br>
+        
+        
+       
+
+
+
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message">Önskemål om leverans</textarea>
+
+        <br>
+           <select name="course">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+        </select>
+        <br>
+        <button>Skicka</button>
+    </form>
+    
+
+
+<br>
+        <br>
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    <form action="booking.html">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required pattern="[0-9]+">
+        <br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required autocomplete="email">
+            
+        <button>Skicka</button>
+    </form>
+    
+
+
+
+
+
+</body>
+</html>
