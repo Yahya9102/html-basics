@@ -9,15 +9,133 @@
     <h1>Forms</h1>
 
     
+    <form>
+        <ul>
+            <li>
+                <label for="name">Namn</label>
+                <input type="text" name="name" id="name" placeholder="Namn" required>
+            </li>
+            <li>
+                <label for="email">E-post</label>
+                <input type="email" name="email" id="email" placeholder="exempel@exempel.com" required>
+            </li>
+        </ul>
+        <button>Skicka</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    
+
+    <nav>    
+        <ul>
+            <li><a href="index.html">Start sidan</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <ol reversed>
+        <li>Siffror
+            <ol>
+                <li value="2">Tio</li>
+                <li>Tjugo</li>
+            </ol>
+        </li>
+        <li>Backend
+            <ol>
+                <li>Java</li>
+                <li>Golang</li>
+            </ol>
+        </li>
+    </ol>
+
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>Markuplanguage for webbdevelopment</dd>
+    </dl>
+
+    <ul>
+        <li><a href="index.html">Start sidan</a></li>
+        <li><a href="about.html">Om oss</a></li>
+        <li><a href="booking.html">Booking</a></li>
+    </ul>
+
+
+    <ol>
+        <li>Öppna webbläsaren</li>
+        <li>Skriv addressen</li>
+        <li>Tryck enter</li>
+    </ol>
+
+
+
+
+
+    
+    <ul>
+        <li>Frontend
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </li>
+        <li>Backend
+            <ul>
+                <li>Java</li>
+                <li>Golang</li>
+            </ul>
+        </li>    
+    </ul>
+
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    
     <form action="submit.html" enctype="multipart/form-data">
         
         <!-- KOPPLA IHOP LABEL MED INPUT VIA ID OCH FOR-->
         <label for="name" >Name</label> 
-        <input type="text" id="name" name="firstname">
+        <input type="text" id="name" name="firstname" placeholder="First name">
         <br>
         
         <label for="email">Email</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" placeholder="Email">
         <br>
         <label for="password">Password</label>
         <input type="password" id="password">
@@ -45,9 +163,15 @@
         <input type="hidden" name="userid" id="hidden">
         
         <input type="range" name="volume" min="0" max="100" step="5" id="">
-        <input type="date" name="booking" min="2026-02-11" max="2027-02-11">
+        <br>
+        
+        <label for="date">Datum</label>
+        <input type="date" name="booking" min="2026-02-11" max="2027-02-11" id="date">
         
         <input type="color">
+
+        <label for="phonenumber">Telefonnummer</label><br>
+        <input type="text" id="phonenumber" placeholder="start with +46">
 
         <input type="file" multiple name="document">
 
@@ -64,20 +188,7 @@
         <input type="text" id="name" name="firstname">
         <br>
         
-        
-       
-
-
-
-
-
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
+    
         <label for="message">Message</label>
         <textarea name="message" id="message">Önskemål om leverans</textarea>
 
@@ -92,28 +203,24 @@
     </form>
     
 
+    <!--Det här är fel du ska stänga taggen -->
+    <p>This is a paragraph
 
-<br>
-        <br>
-        <br>
-        <br>
-        <br><br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
+    <br>
     <form action="booking.html">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required pattern="[0-9]+">
         <br>
         <label for="email">Email</label>
         <input type="text" name="email" id="email" required autocomplete="email">
-            
+
         <button>Skicka</button>
     </form>
     
+
+
+
+
 
 
 
