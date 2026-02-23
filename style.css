@@ -1,5 +1,40 @@
 /*RESET old  school */
 
+
+
+
+
+
+
+
+/*
+
+
+html {
+    font-size: 16px;
+}
+
+h1 {font-size: 2rem;} /*32*/
+
+p {font-size: 1rem;} /*16px*/
+
+.section {padding: 2rem;} /*32*/
+
+/*
+
+
+.btn {
+    font-size: 16px;
+    padding: 0.75em 1.25em; /* baserat på 16px 12px och 20pixlar*/
+
+
+.parent {font-size: 20px;}
+.child {font-size: 1.2em;} /* 24px (1.2 *20)*/
+.grandchild {font: 1.2em;} /* 28.8* (1.2 *24) /
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +53,6 @@ li:last-child{
 li:nth-child(2){
     background-color: lightcoral;
 }
-
 
 
 
@@ -146,6 +180,7 @@ span {
 .link:visited{
     background-color:rebeccapurple;
 }
+
 
 
 .link:active{
