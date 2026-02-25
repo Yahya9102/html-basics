@@ -1,3 +1,90 @@
+/*
+await async function test(){
+    return "Hej"
+}
+
+// Promise {"Hej"}
+
+*/
+
+
+
+
+
+
+
+
+
+// callback
+
+/*
+console.log("Start")
+
+setTimeout(function() {
+    console.log("Timeout");
+}, 1000)
+
+console.log("Slut")
+
+*/
+
+// Callback hell
+/*
+doSomething(function(result1) {
+    doSomethingElse(result1), function(result2) {
+        doThingThing(result2), function(result3){
+            console.log(result3)
+        }
+    }
+})
+*/
+
+
+// new modern way of writing Promise
+
+/*
+fetchData()
+    .then(result => console.log(result))
+    .then(result1 => console.log(result1))
+    .then(result2 => console.log(result2))
+    .catch(error => console.log(error))
+
+
+
+
+
+const myPromise = new Promise(function(resolve, reject){
+    let success = true;
+    if (success){
+        resolve("Allt gick bra")
+    } else {
+        reject("Något gick fel")
+    }
+})
+
+myPromise
+    .then(function(result){
+        console.log(result)
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+
+
+*/
+
+// Arrrow function
+
+/*
+function add(a, b){
+     return a + b
+    }
+
+const add = (a, b) => a + b;
+*/
+
+
+
 
 
 // Event loop
