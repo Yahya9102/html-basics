@@ -1,337 +1,187 @@
+
+
+
+
+
 /*
-await async function test(){
-    return "Hej"
+
+async function sendUser(){
+    const response = await fetch("https://jsonplaceholder.typicode.com/users",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: "Skor",
+            body: "Svarta skor",
+            shoeId: 1
+        })
+    });
+
+    const result = await response.json();
+    console.log(result)
 }
 
-// Promise {"Hej"}
+sendUser()
 
 */
 
 
 
 
+const button = document.querySelector("#loadBtn");
+const list = document.querySelector("#userList");
 
 
+button.addEventListener("click", async function() {
+    button.textContent = "Laddar..."
+    try {
+    const response = await fetch ("https://jsonplaceholder.typicode.com/users");
+    const users = await response.json()
 
 
+    button.textContent  = "Ladda användare"
 
-// callback
+    list.innerHTML = "";
 
-/*
-console.log("Start")
-
-setTimeout(function() {
-    console.log("Timeout");
-}, 1000)
-
-console.log("Slut")
-
-*/
-
-// Callback hell
-/*
-doSomething(function(result1) {
-    doSomethingElse(result1), function(result2) {
-        doThingThing(result2), function(result3){
-            console.log(result3)
-        }
+    users.forEach(function(user) {
+        const li = document.createElement("li");
+        li.textContent = user.name;
+        list.append(li)
+    });
+    } catch(error) {
+        console.log("Error:", error)
     }
+})
+
+
+
+
+
+
+/*
+Modern way of writing fetch calls
+async function getUsers() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await response.json();
+    console.log(data)
+} 
+
+getUsers()
+
+*/
+
+
+
+
+/*
+    Old school way of writing fetch
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(function(response){
+    return response.json()
+})
+.then(function(data) {
+    console.log(data)
+})
+
+*/
+
+
+
+
+
+
+/*
+const form = document.querySelector("#myForm");
+const input = document.querySelector("#nameInput");
+const output = document.querySelector("#output");
+
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault()
+    console.log("formuläret skickad")
 })
 */
 
 
-// new modern way of writing Promise
-
 /*
-fetchData()
-    .then(result => console.log(result))
-    .then(result1 => console.log(result1))
-    .then(result2 => console.log(result2))
-    .catch(error => console.log(error))
+const title = document.querySelector("#title");
+const button = document.querySelector("#changebtn");
 
+button.addEventListener("click", function(){
+    title.style.color = "red";
+    title.textContent = "Jag ändrade färg!"
 
-
-
-
-const myPromise = new Promise(function(resolve, reject){
-    let success = true;
-    if (success){
-        resolve("Allt gick bra")
-    } else {
-        reject("Något gick fel")
-    }
 })
 
-myPromise
-    .then(function(result){
-        console.log(result)
-    })
-    .catch(function(error){
-        console.log(error)
-    })
-
-
-*/
-
-// Arrrow function
-
-/*
-function add(a, b){
-     return a + b
-    }
-
-const add = (a, b) => a + b;
 */
 
 
-
-
-
-// Event loop
-// Mekaniskmen som kollar om Call stack är tom, flyttar funktioner från queues till stacken
 /*
 
-Logiken fungerar som nedan
-while(true):
-    if stack är tom
-    Kör alla microtasks
-    Kör alla macrotask
-*/
+const button = document.querySelector("#btn")
+function add(a, b) {
+    const result = a + b;
+    console.log("Result", result)
+}
 
-
-
-// Macrotask Queue (vanliga kö)
-// Dessa hamnar under Macrotask
-// setTimeout, setInterval, Dom events
-/*
-setTimeout(function() {
-    console.log("Timeout");
-}, 1000)
-*/
-
-
-
-// Microtask Queue (högre prio)
- // Dessa hamnar under microtask
-//queueMicrotask, finally, fetch
-
-
-/*
-Promise.resolve().then(function() {
-    console.log("B")
+button.addEventListener("mouseover", function () {
+    add(5,5)
 })
+
 */
 
 
 
-// Promise.then
 
 
 
+/*
+const myList = document.querySelector("ul");
+const myNewListItem = document.createElement("li");
+const elementToRemove = document.querySelector("#main-text");
 
 
-// synkron
-// -> anrop väntar på svar
+myNewListItem.innerText = "Andra"
+myList.append(myNewListItem)
 
 
-console.log("Start")
-
-setTimeout(function() {
-    console.log("Timeout");
-}, 1000)
+elementToRemove.remove()
+*/
 
 
-// Inloggningsida
+/*
+// CSS CHANGES VIA JAVASCRIPT
 
-// Användaren är inloggad
+const title = document.querySelector("#main-title");
+title.style.color = "green"
+title.style.textAlign = "right"
+title.style.fontSize = "3rem"
+*/
 
-// Användaren uppdaterar Email
 
-// Ni visar uppdaterade mailet
 
+/* Get by class returns a collection of elements
+// const mainText = document.getElementsByClassName("main-text")
+
+
+/*for (let i = 0; i < mainText.length; i++){
+    mainText[i].textContent = "Nej"
+}
+// mainText.textContent = "Nej!"
+*/
+
+
+/*
+
+const firstLi = document.querySelector("li")
+const allLis = document.querySelectorAll("li")
 // 
+allLis. FOR LOOP NEEDED TO GO THROUGH THIS!
 
-
-
-
-console.log("slut")
-
-
-// asynkron
-// -> anrop går vidare
-
-
-
-
-/*
-
-function second(){
-    console.log("Hej")
-}
-
-first()
-*/
-
-
-
-/*
-Switch cases
-
-
-let a = 2 + 3;
-
-switch (a) {
-    case 3: 
-        console.log("Too small")
-        break;
-    case 4: 
-        console.log("Too small")
-        break;
-    case 5: 
-        console.log("Match")
-        break;
-    default:
-        console.log("Det matchar inte våra värden")
-    }
-
-
+firstLi.textContent = "3"
 
 */
-
-
-
-
-/*
-LOOPS IN
-
-for (let i = 0; i < 3; i++){
-    console.log(i)
-}
-
-
-
-
-let i = 0;
-
-while (i < 3) {
-    console.log(i)
-    i++
-}
-
-
-let j = 0;
-
-do {
-    j++
-    console.log(j)
-} while (j < 3)
-*/
-
-
-/*
-
-let age = 19;
-
-
-if (age > 21) {
-    console.log("You´re allowed to drink")
-} else {
-    console.log("You´re too young")
-}
-
-
-// ternary operator (Mini if sats)
-let drink = age >= 21 ? "Beer" : "Juice";
-
-console.log(drink)
-
-*/
-
-
-
-/*
-let x = parseInt("1" + 2)
-console.log(x)
-
-console.log(typeof(x))
-
-
-/** ALLa siffror i JavaScript är "double" i grunden
-console.log(3/2)
-
-console.log(Math.floor(3/2))
-
-console.log(0.1 + 0.2)
-console.log(0.1 + 0.2 === 0.3)
-
- */
-/*
-// = Tilldelning
-let x = 12;
-
-
-// == "Som jämförelse" (MEN den kan konvertera typer)
-console.log(x == 12);
-console.log(x == "12");
-
-
-// === Som  STRIKT jämförelse (Värde + datatyp)
-console.log(x === "12");
-console.log(x === 12);
-
-*/
-
-
-
-// Datatyper
-/*
-String
-Number
-Boolean
-Undefined
-Null
-Object
-
-
-const name = "Yahya";
-const age = 35;
-const isTeacher = true;
-let notSetYet;
-const empty = null;
-const person = {name: "Yahya", age: 30}
-
-// DONT DO THIS CONFUNSING!
-const list = [1,"Yahya",true]
-
-// Have the same type
-const correctList = [1,2,3]
-
-
-const hej = null;
-
-console.log(hej)
-
-*/
-
-
-
-/*
-// Let är fluid vilket betyder att den kan komma att ändras
-let name = "Yahya";
-name = 4
-name = false
-
-
-const birthYear = 1991;
-const isStudent = true;
-const studentName = "Yahya";
-
-
-console.log(birthYear)
-birthYear = 2025
-console.log(birthYear)
-*/
-
 
 
 
